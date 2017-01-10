@@ -22,10 +22,10 @@ const initConfig = (config) => {
         negative: true,
 
         // 整数位数
-        maxIntSize: 12,
+        intSize: 12,
 
         // 小数位数
-        maxDecimalSize: 0
+        decimalSize: 0
     };
 
     // 组装自定义配置与当前默认配置
@@ -68,17 +68,17 @@ const handlePerDom = (dom, config) => {
         var valArray = curVal.split('.');
 
         // 小数位长度为0
-        if (config.maxDecimalSize === 0 && curVal.indexOf('.') !== -1) {
+        if (config.decimalSize === 0 && curVal.indexOf('.') !== -1) {
             return resetVal(oriVal, e);
         }
 
         // 超过小数位长度
-        if (valArray.length > 1 && valArray[1].length > config.maxDecimalSize) {
+        if (valArray.length > 1 && valArray[1].length > config.decimalSize) {
             return resetVal(oriVal, e);
         }
 
         // 超过整数位长度
-        if (valArray[0].length > config.maxIntSize) {
+        if (valArray[0].length > config.intSize) {
             return resetVal(oriVal, e);
         }
 
