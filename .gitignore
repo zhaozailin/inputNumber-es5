@@ -1,0 +1,8 @@
+node_modules/
+.gitignore
+.idea/inputNumber-es5.iml
+.idea/misc.xml
+.idea/modules.xml
+.idea/watcherTasks.xml
+.idea/workspace.xml
+dist/
