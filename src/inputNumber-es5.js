@@ -89,6 +89,11 @@ const handlePerDom = (dom, config) => {
 
         oriVal = curVal;
     });
+
+    // 重置默认值
+    dom.bind('resetValue', function () {
+        oriVal = dom.val();
+    });
 };
 
 export default {init};
