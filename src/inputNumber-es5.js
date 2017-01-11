@@ -44,7 +44,12 @@ const resetVal = (oriVal, e) => {
 
 // 处理单个元素
 const handlePerDom = (dom, config) => {
-    let oriVal = '';
+    let oriVal = dom.val();
+
+    // 默认值非数字时转为空
+    if (isNaN(oriVal)) {
+        oriVal = '';
+    }
 
     // 监控oninput事件
     dom.on('input', (e) => {
