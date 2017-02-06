@@ -82,8 +82,8 @@ const handlePerDom = (dom, config) => {
             return resetVal(oriVal, e);
         }
 
-        // 超过整数位长度
-        if (valArray[0].length > config.intSize) {
+        // 超过整数位长度（过滤掉可能存在的-号）
+        if (valArray[0].replace('-', '').length > config.intSize) {
             return resetVal(oriVal, e);
         }
 
